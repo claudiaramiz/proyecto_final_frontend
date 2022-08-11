@@ -9,7 +9,12 @@ const Blog = () => {
       <Row className="mt-5">
         <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
           <Card style={{ width: '95%' }}>
-            <Card.Img variant="top" src="/img/users-card.svg" />
+            <Card.Img variant="top" src="/img/users-card.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
@@ -22,7 +27,12 @@ const Blog = () => {
         </Col>
         <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
           <Card style={{ width: '95%' }}>
-            <Card.Img variant="top" src="/img/male_avatar.svg" />
+            <Card.Img variant="top" src="/img/male_avatar.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
@@ -35,7 +45,120 @@ const Blog = () => {
         </Col>
         <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
           <Card style={{ width: '95%' }}>
-            <Card.Img variant="top" src="/img/female_avatar.svg" />
+            <Card.Img variant="top" src="/img/female_avatar.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+          <Card style={{ width: '95%' }}>
+            <Card.Img variant="top" src="/img/users-card.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+          <Card style={{ width: '95%' }}>
+            <Card.Img variant="top" src="/img/male_avatar.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+          <Card style={{ width: '95%' }}>
+            <Card.Img variant="top" src="/img/female_avatar.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+          <Card style={{ width: '95%' }}>
+            <Card.Img variant="top" src="/img/users-card.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+          <Card style={{ width: '95%' }}>
+            <Card.Img variant="top" src="/img/male_avatar.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+          <Card style={{ width: '95%' }}>
+            <Card.Img variant="top" src="/img/female_avatar.svg"
+              style={{
+                width: '140px', height:'140px',
+                borderRadius: '50%',
+                objectFit: 'cover'
+              }} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
