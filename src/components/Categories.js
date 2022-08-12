@@ -61,11 +61,11 @@ const onChangeDesc= (e) => {
           <Form>
             <Form.Group controlId="formName">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter title" onChange={onChangeName} value={val || ''} />
+              <Form.Control type="text" name="txtName" placeholder="Enter title" onChange={onChangeName} value={val || ''} />
             </Form.Group>
             <Form.Group controlId="formName">
               <Form.Label>Description</Form.Label>
-              <Form.Control type="text" placeholder="Enter description" onChange={onChangeDesc} value={valDesc    || ''}  />
+              <Form.Control type="text" name="txtDescription" placeholder="Enter description" onChange={onChangeDesc} value={valDesc    || ''}  />
               <Button variant="primary" style={{ widt: '15rem' }} onClick={postedCategory}>Save</Button>
             </Form.Group>
           </Form>
