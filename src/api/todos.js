@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001/todos";
+const API_URL = "https://blog-app-backend-idgs9a-211368.herokuapp.com/todos";
 
 export async function getTodos(){
     try {

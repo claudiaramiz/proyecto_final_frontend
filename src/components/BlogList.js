@@ -50,8 +50,7 @@ const BlogList = () => {
             </Card.Body>
           </Card>          
         </Col>
-        ))}
-       
+        ))}       
       </Row>
     </Container>
   )
