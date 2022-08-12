@@ -8,10 +8,16 @@ const BlogList = () => {
     <Container>
       <Row className="mt-5">
         <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+          <h1>Blogs</h1>
+        </Col>
+      </Row>
+      <Row className="mt-5">
+        <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/users-card.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />
@@ -29,7 +35,7 @@ const BlogList = () => {
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/male_avatar.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />
@@ -47,7 +53,7 @@ const BlogList = () => {
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/female_avatar.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />
@@ -65,7 +71,7 @@ const BlogList = () => {
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/users-card.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />
@@ -83,7 +89,7 @@ const BlogList = () => {
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/male_avatar.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />
@@ -101,7 +107,7 @@ const BlogList = () => {
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/female_avatar.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />
@@ -119,7 +125,7 @@ const BlogList = () => {
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/users-card.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />
@@ -137,7 +143,7 @@ const BlogList = () => {
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/male_avatar.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />
@@ -155,7 +161,7 @@ const BlogList = () => {
           <Card style={{ width: '95%' }}>
             <Card.Img variant="top" src="/img/female_avatar.svg"
               style={{
-                width: '140px', height:'140px',
+                width: '140px', height: '140px',
                 borderRadius: '50%',
                 objectFit: 'cover'
               }} />

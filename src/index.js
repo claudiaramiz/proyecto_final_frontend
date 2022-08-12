@@ -12,6 +12,7 @@ import NavbarInferior from './components/NavbarInferior';
 
 import { I18nextProvider } from 'react-i18next';
 import i18n from './config/localization/i18n';
+import Category from './components/Category';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,9 +21,9 @@ root.render(
     <BrowserRouter>
         <I18nextProvider i18n={i18n}>
           <Navigation />
-          <NavbarInferior />
           <Routes>
           <Route path='/' element={<App></App>}></Route>
+          <Route path='/Category' element={<Category></Category>}></Route>
           <Route path='/Blog' element={<Blog></Blog>}></Route>
           <Route path='/BlogList' element={<BlogList></BlogList>}></Route>
           <Route path='/Login' element={<Login></Login>}></Route>
