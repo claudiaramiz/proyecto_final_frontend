@@ -25,7 +25,7 @@ const Blog = () => {
               <Form.Label>Image</Form.Label>
               <Form.Control type="file" />
             </Form.Group>
-            <Button variant="primary">Primary</Button>{' '}
+            <Button variant="primary">Save</Button>{' '}
           </Form>
         </Col>
       </Row>
