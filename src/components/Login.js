@@ -1,66 +1,109 @@
-import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import axios from 'axios';
-import md5 from 'md5';
+import React, { useState } from "react";
+import { Container, Row, Col, Alert } from 'react-bootstrap';
 
-const baseUrl = "http://localhost:3001/usuarios";
+function Login() {
+  // React States
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-class Login extends Component {
 
-  state = {
-    form: {
-      username: '',
-      password: ''
+  // User Login info
+  const database = [
+    {
+      "id": 1,
+      "lastname": "Ramirez",
+      "firstname": "Claudia",
+      "username": "claudiar",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "lastname": "Soto",
+      "firstname": "Carolina",
+      "username": "carosoto",
+      "password": "54321"
+    },
+    {
+      "id": 3,
+      "lastname": "Estrada",
+      "firstname": "Caro",
+      "username": "estrada",
+      "password": "12367"
     }
-  }
+  ];
 
-  handleChange = async e => {
-    await this.setState({
-      form: {
-        ...this.state.form,
-        [e.target.name]: e.targe.value
+  const errors = {
+    uname: "Invalid username",
+    pass: "Invalid password"
+  };
+
+  const handleSubmit = (event) => {
+    //Prevent page reload
+    event.preventDefault();
+
+    var { uname, pass } = document.forms[0];
+
+    // Find user login info
+    const userData = database.find((user) => user.username === uname.value);
+
+    // Compare user info
+    if (userData) {
+      if (userData.password !== pass.value) {
+        // Invalid password
+        setErrorMessages({ name: "pass", message: errors.pass });
+      } else {
+        setIsSubmitted(true);
       }
-    });
-  }
+    } else {
+      // Username not found
+      setErrorMessages({ name: "uname", message: errors.uname });
+    }
+  };
 
-  iniciarSesion = async () => {
-    await axios.get(baseUrl, { params: { username: this.state.form.username, password: md5(this.state.form.password)}})
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
-
-  render() {
-
-    return (
-      <Container>
-        <Row className="mt-5">
-          <Col xs={{ span: 12 }} md={{ span: 6 }} className="mb-5">
-            <div className='form-outline mb-4'>
-              <input type="text" name="username"
-                onChange={this.handleChange}
-                className="form-control" />
-              <label className="form-label">User name</label>
-            </div>
-            <div className="form-outline mb-4">
-              <input type="password" name="password"
-                onChange={this.handleChange}
-                className="form-control" />
-              <label className="form-label">Password</label>
-            </div>
-            <div className="row mb-4">
-              <button type="button" className="btn btn-primary btn-block mb-4" onClick={()=>this.iniciarSesion()}>Sign in</button>
-            </div >
-          </Col>
-        </Row>
-      </Container>
+  // Generate JSX code for error message
+  const renderErrorMessage = (name) =>
+    name === errorMessages.name && (
+      <div className="error">{errorMessages.message}</div>
     );
 
-  }
+  // JSX code for login form
+  const renderForm = (
+    <Container>
+      <Row className="mt-5">
+        <Col xs={{ span: 12 }} md={{ span: 6 }} className="mb-5">
+          <div className="form-outline mb-6">
+            <form onSubmit={handleSubmit}>
+              <div className="input-container">
+                <label className="form-label">Username </label>
+                <input type="text" name="uname" className="form-control" required />
+                {renderErrorMessage("uname")}
+              </div>
+              <div className="input-container">
+                <label className="form-label">Password </label>
+                <input type="password" name="pass" className="form-control" required />
+                {renderErrorMessage("pass")}
+              </div>
+              <div className="input-container">
+                <div className="input-container">&nbsp;</div>
+                <input type="submit" className="btn btn-primary btn-block" />
+              </div>
+            </form>
+          </div>
+        </Col>
+      </Row>
+    </Container>
 
+  );
+
+  return (
+    <div className="app">
+      <div className="login-form">
+        <Alert.Heading>Sign In</Alert.Heading>
+        <div className="title"></div>
+        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Login;
