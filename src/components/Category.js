@@ -4,7 +4,7 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 const Category = () => {
   return (
     <Container>
-      <Row className="mt-5">
+      <Row className="mt-1">
         <Col xs={{ span: 12 }} md={{ span: 6 }} className="mb-5">
           &nbsp;
         </Col>
