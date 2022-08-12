@@ -19,8 +19,6 @@ const Blog = () => {
       let obj = { title, description, category, userName, imagen }
       const added = await postBlog(obj);
       console.log(added);
-      if(added != null)
-      {}
     } catch (error) {
       console.log(error);
     }
