@@ -6,8 +6,8 @@ function Home() {
         <Container>
             <Row className="mt-5">
                 <Col xs={{ span: 12 }} md={{ span: 6 }} className="mb-5">
-                    <h2>Bienvenid@ al Blog!</h2>
-                    <p>Publica todo lo que deseas!</p>
+                    <h2>Bienvenid@ a Oh My Blog!</h2>
+                    <p>Publica todo lo que deseas compartir!</p>
                     <p>
                         <Button as={Link} to="/login" className="ml-1">Ingresa</Button> </p>
                 </Col>
