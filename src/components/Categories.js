@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button, Form, Card } from 'react-bootstrap';
-import { createCategory, getCategories, postCategory } from '../api/categories';
+import { getCategories, postCategory } from '../api/categories';
 
 const Categories = () => {
 
@@ -23,20 +23,6 @@ const Categories = () => {
   //   const deleted = await deleteCategory(id);
   //   console.log(deleted);
   // };
-
-  const addCategory = async () => {
-    try {
-      let obj = {category, catDescription}
-      const added = await createCategory(obj);
-      console.log(added);
-      fetchCategories();
-      setCategory('');
-      setCatDescription('');
-      
-    } catch (error) {
-      console.log(error);
-        }
-  }
 
   const postedCategory = async () => {
     try {

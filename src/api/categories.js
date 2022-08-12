@@ -41,17 +41,3 @@ export async function postCategory(cat) {
         console.log(error);
     }
 }
-
-export async function createCategory(cat) {
-    try {
-
-        const res = await fetch(API_URL, {
-            method: 'POST',
-            body: cat
-        })
-        const data = await res.json();
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
-}

@@ -13,7 +13,6 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './config/localization/i18n';
 import Categories from './components/Categories';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
