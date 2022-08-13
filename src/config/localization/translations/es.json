@@ -11,5 +11,9 @@
     "blogCategory":"Categoría",
     "blogImage":"Imagen",
     "blogSave":"Guardar",
-    "blogSelect":"Selecccionar elemento"
+    "blogSelect":"Selecccionar elemento",
+    "home":"Inicio",
+    "blogs":"Blogs",
+    "categories":"Categorías",
+    "newBlog":"Nuevo Blog"
 }

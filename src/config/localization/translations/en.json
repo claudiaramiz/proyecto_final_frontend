@@ -11,6 +11,10 @@
     "blogCategory":"Category",
     "blogImage":"Image",
     "blogSave":"Save",
-    "blogSelect":"Select item"
+    "blogSelect":"Select item",
+    "home":"Home",
+    "blogs":"Blogs",
+    "categories":"Categories",
+    "newBlog":"New Blog"
     
 }
