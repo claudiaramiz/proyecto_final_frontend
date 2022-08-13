@@ -33,6 +33,7 @@ const Blog = () => {
       console.log(error);
     }
   }
+  
   const mostrarAlerta = () => {
     swal("Blog creado", "Se ha creado el blog exitosamente");
   }
