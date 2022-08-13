@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button, Form, Card } from 'react-bootstrap';
 import { getCategories, postCategory } from '../api/categories';
 import swal from 'sweetalert';
+import { useTranslation } from 'react-i18next';
 
 const Categories = () => {
 
@@ -10,6 +11,9 @@ const Categories = () => {
   const [catDescription, setCatDescription] = useState('');
   const [val, setVal] = useState();
   const [valDesc, setValDesc] = useState();
+  const { t } = useTranslation();
+  const message = t("catMessage");
+  const titleMessage = t("catTitleMessage")
 
   async function fetchCategories() {
     const fetchedCategories = await getCategories();
@@ -19,11 +23,6 @@ const Categories = () => {
   useEffect(() => {
     fetchCategories();
   }, [])
-
-  // const removeCategory = async (id) => {
-  //   const deleted = await deleteCategory(id);
-  //   console.log(deleted);
-  // };
 
   const postedCategory = async () => {
     try {
@@ -55,27 +54,27 @@ const Categories = () => {
   }
 
   const mostrarAlerta = () => {
-    swal("Categoria creada", "Se ha creado la categoria exitosamente");
+    swal(titleMessage, message);
   }
 
   return (
     <Container>
       <Row className="mt-1">
         <Col xs={{ span: 12 }} md={{ span: 12 }} className="mb-5">
-          <h1>Categories</h1>
+          <h1>{t("categories")}</h1>
         </Col>
       </Row>
       <Row>
         <Col xs={{ span: 12 }} md={{ span: 6 }} className="mb-1">
           <Form>
             <Form.Group controlId="formName">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>{t("catTitle")}</Form.Label>
               <Form.Control type="text" name="txtName" placeholder="Enter title" onChange={onChangeName} value={val || ''} />
             </Form.Group>
             <Form.Group controlId="formName">
-              <Form.Label>Description</Form.Label>
+              <Form.Label>{t("catText")}</Form.Label>
               <Form.Control type="text" name="txtDescription" placeholder="Enter description" onChange={onChangeDesc} value={valDesc || ''} />
-              <Button variant="primary" style={{ widt: '15rem' }} onClick={postedCategory}>Save</Button>
+              <Button variant="primary" style={{ widt: '15rem' }} onClick={postedCategory}>{t("catSave")}</Button>
             </Form.Group>
           </Form>
         </Col>

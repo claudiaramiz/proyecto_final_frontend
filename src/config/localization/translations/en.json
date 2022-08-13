@@ -15,6 +15,10 @@
     "home":"Home",
     "blogs":"Blogs",
     "categories":"Categories",
-    "newBlog":"New Blog"
-    
+    "newBlog":"New Blog",
+    "catTitle":"Category",
+    "catText":"Description",
+    "catSave":"Save",
+    "catMessage":"The category was created successfully",
+    "catTitleMessage":"Category created"
 }
