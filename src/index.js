@@ -5,11 +5,11 @@ import Blog from './components/Blog';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/Navigation';
-
 import BlogList from './components/BlogList';
-
+import Categories from './components/Categories';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './config/localization/i18n';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
