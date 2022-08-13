@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { getCategories } from '../api/categories';
 import { postBlog } from '../api/todos';
 import swal from 'sweetalert';
+import { useTranslation } from 'react-i18next';
 
 const Blog = () => {
 
@@ -15,6 +16,11 @@ const Blog = () => {
   const [category, setCategory] = useState('');
   const [val, setVal] = useState();
   const [valDesc, setValDesc] = useState();
+  const [valImg, setValImg] = useState();
+  const { t } = useTranslation();
+  const message = t("messageBlog");
+  const titleMessage = t("titleMessageBlog")
+
 
   const postedBlog = async () => {
     try {
@@ -28,14 +34,15 @@ const Blog = () => {
         setImagen('');
         setCategories([]);
         fetchCategories();
+        setValImg('');
       }
     } catch (error) {
       console.log(error);
     }
   }
-  
+
   const mostrarAlerta = () => {
-    swal("Blog creado", "Se ha creado el blog exitosamente");
+    swal({ titleMessage }, { message });
   }
 
   async function fetchCategories() {
@@ -81,17 +88,17 @@ const Blog = () => {
           <h1>Blog</h1>
           <Form>
             <Form.Group controlId="formName">
-              <Form.Label>Title</Form.Label>
-              <Form.Control type="text" placeholder="Enter title"  onChange={onChangeTitle} value={val || ''} />
+              <Form.Label>{t("blogTitle")}</Form.Label>
+              <Form.Control type="text" placeholder="Enter title" onChange={onChangeTitle} value={val || ''} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Text</Form.Label>
+              <Form.Label>{t("blogText")}</Form.Label>
               <Form.Control as="textarea" rows={3} onChange={onChangeDescription} value={valDesc || ''} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>{t("blogCategory")}</Form.Label>
               <select name="ddlCategories" className='form-control' onChange={cambioCategory}>
-                <option key="Seleccionar" value="Seleccionar">Seleccionar elemento</option>
+                <option key="Seleccionar" value="Seleccionar">{t("blogSelect")}</option>
                 {categories && categories.map((category) => (
                   <>
                     <option key={category.category} value={category.category}>
@@ -103,11 +110,11 @@ const Blog = () => {
               </select>
               {/* <Form.Label>El elemento seleccionado es {category}</Form.Label> */}
             </Form.Group>
-            <Form.Group controlId="formFile" className="mb-3" onChange={onChangeImagen}>
-              <Form.Label>Image</Form.Label>
+            <Form.Group controlId="formFile" className="mb-3" onChange={onChangeImagen} value={valImg || ''}>
+              <Form.Label>{t("blogImage")}</Form.Label>
               <Form.Control type="file" />
             </Form.Group>
-            <Button variant="primary" onClick={postedBlog}>Save</Button>{' '}
+            <Button variant="primary" onClick={postedBlog}>{t("blogSave")}</Button>{' '}
           </Form>
         </Col>
       </Row>

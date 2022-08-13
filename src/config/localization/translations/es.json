@@ -1,7 +1,15 @@
 {
-    "title": "Bienvenido a Blog",
+    "title": "Bienvenid@ a Oh My Blog!",
     "name": "Nombre",
     "isLogin": "Inició sesión",
-    "isLogout": "Cerró sesión"
-    
+    "isLogout": "Cerró sesión",
+    "titleMessageBlog": "Blog creado",
+    "messageBlog": "El blog se creó correctamente",
+    "welcome": "Publica todo lo que deseas compartir!",
+    "blogTitle":"Título",
+    "blogText":"Texto",
+    "blogCategory":"Categoría",
+    "blogImage":"Imagen",
+    "blogSave":"Guardar",
+    "blogSelect":"Selecccionar elemento"
 }

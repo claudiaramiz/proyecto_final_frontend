@@ -1,7 +1,16 @@
 {
-    "title": "Welcome to Blog",
+    "title": "Welcome to Oh My Blog!",
     "name": "Name",
     "isLogin": "Is Login",
-    "isLogout": "Is Logout"
+    "isLogout": "Is Logout",
+    "titleMessageBlog":"Blog created",
+    "messageBlog" : "The blog was created successfully",
+    "welcome" : "Post everything you want to share!",
+    "blogTitle":"Title",
+    "blogText":"Text",
+    "blogCategory":"Category",
+    "blogImage":"Image",
+    "blogSave":"Save",
+    "blogSelect":"Select item"
     
 }

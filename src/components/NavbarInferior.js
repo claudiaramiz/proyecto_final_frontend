@@ -1,16 +1,23 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useTranslation } from 'react-i18next';
-import { ThemeContext } from '../context/ContextoGeneral'
+import {  Button } from 'react-bootstrap';
+
 
 const NavbarInferior = () => {
     const { t } = useTranslation();
-    const { isLogin } = useContext(ThemeContext);
-    const { name } = useContext(ThemeContext);
+    const { i18n } = useTranslation();
+
+    function changeLanguage(e) {
+        i18n.changeLanguage(e.target.value);
+    }
 
     return (
         <div className="containerNav">
-            <p>{t("name")} {name}</p>
-            <p>{t("isLogin")} {isLogin}</p>
+
+            <div className="btn-group-lang">
+                <button onClick={changeLanguage} value='en' className='btn btn-primary'>English</button>
+                <button onClick={changeLanguage} value='es' className='btn btn-primary' >Español</button>
+            </div>
         </div>
     );
 }

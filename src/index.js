@@ -10,6 +10,7 @@ import Categories from './components/Categories';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './config/localization/i18n';
 import { Auth0Provider } from '@auth0/auth0-react';
+import NavbarInferior from './components/NavbarInferior';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
     <BrowserRouter>
         <I18nextProvider i18n={i18n}>
           <Navigation />
+          <NavbarInferior />
           <Routes>
           <Route path='/' element={<App></App>}></Route>
           <Route path='/Categories' element={<Categories></Categories>}></Route>
