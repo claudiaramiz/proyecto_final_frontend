@@ -7,12 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/Navigation';
 
 import BlogList from './components/BlogList';
-import { Auth0Provider } from '@auth0/auth0-react';
 
 import { I18nextProvider } from 'react-i18next';
 import i18n from './config/localization/i18n';
-import Category from './components/Category';
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,7 +23,7 @@ root.render(
           <Navigation />
           <Routes>
           <Route path='/' element={<App></App>}></Route>
-          <Route path='/Category' element={<Category></Category>}></Route>
+          <Route path='/Categories' element={<Categories></Categories>}></Route>
           <Route path='/Blog' element={<Blog></Blog>}></Route>
           <Route path='/BlogList' element={<BlogList></BlogList>}></Route>
           </Routes>

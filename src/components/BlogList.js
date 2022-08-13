@@ -6,22 +6,22 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { getTodos } from '../api/todos';
 
 
-const BlogList = () => { 
- 
-    const [ todos, setTodos] = useState([]);  
-   
-    async function fetchTodos(){
-      const fetchedtodos = await getTodos();
-      //console.log({fetchedtodos});
-      setTodos(fetchedtodos);  
-    }
-  
-  
+const BlogList = () => {
+
+  const [todos, setTodos] = useState([]);
+
+  async function fetchTodos() {
+    const fetchedtodos = await getTodos();
+    //console.log({fetchedtodos});
+    setTodos(fetchedtodos);
+  }
+
+
   useEffect(() => {
     fetchTodos();
   }, []);
 
-   return (
+  return (
     <Container>
       <Row className="mt-5">
         <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
@@ -29,11 +29,11 @@ const BlogList = () => {
         </Col>
       </Row>
       <Row className="mt-5">
-      {todos.map((todo) => (   
-        <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
-        
-          
-            <Card style={{ width: '95%' }}>
+        {todos.map((todo) => (
+          <Col xs={{ span: 6 }} md={{ span: 4 }} className="mb-5">
+            <Card style={{
+              width: '95%',
+              heigth: '170px' }}>
             <Card.Img variant="top" src="/img/users-card.svg"
               style={{
                 width: '140px', height: '140px',
@@ -42,7 +42,7 @@ const BlogList = () => {
               }} />
             <Card.Body>
               <Card.Title>{todo.title}</Card.Title>
-              <Card.Text>                
+              <Card.Text>
                 <h6><p>{todo.category}</p></h6>
                 {todo.description}
               </Card.Text>
@@ -50,9 +50,9 @@ const BlogList = () => {
             </Card.Body>
           </Card>          
         </Col>
-        ))}       
-      </Row>
-    </Container>
+        ))}
+    </Row>
+    </Container >
   )
 }
 
