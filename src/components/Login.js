@@ -9,10 +9,5 @@ export const LoginButton = () =>{
   return <Button variant="primary" onClick={() => loginWithRedirect()}> Login </Button>
 
 };
-export const LoginNav = () =>{
-  const {loginWithRedirect } = useAuth0();
 
-  return  <Nav.Link as={NavLink} to={loginWithRedirect}>Login</Nav.Link>
-  
-};
 

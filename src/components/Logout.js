@@ -8,12 +8,4 @@ export const LogoutButton = () =>{
   const { logout } = useAuth0();
 
   return <Button variant="primary" onClick={() => logout()}> Logout </Button>
-
 };
-export const LogoutNav = () =>{
-  const {logout } = useAuth0();
-
-  return  <Nav.Link as={NavLink} to={logout()}>Logout</Nav.Link>
-  
-};
-

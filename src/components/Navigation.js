@@ -18,13 +18,25 @@ const Navigation = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-                    <Nav.Link as={NavLink} to="/Category">Category</Nav.Link>
-                    <Nav.Link as={NavLink} to="/BlogList">BlogList</Nav.Link>
-                    <Nav.Link as={NavLink} to="/Blog">Blog</Nav.Link>
-                    <Nav.Link as={NavLink} to="/Login">Login</Nav.Link>
-                    <Nav.Link as={NavLink} to="/Logout">Logout</Nav.Link>
+                    <Nav.Link as={NavLink} to="/BlogList">Blogs</Nav.Link>
+                    {isAuthenticated ? (
+                        <>
+                        <Nav.Link as={NavLink} to="/Categories">Categories</Nav.Link>
+                        <Nav.Link as={NavLink} to="/Blog">Nuevo Blog</Nav.Link>
+                            </>
+                         ) : (
+                            <></>
+                     )}     
                 </Nav>
             </Navbar.Collapse>
+            {isAuthenticated ? (
+                        <>
+                       
+                        <LogoutButton />
+                            </>
+                         ) : (
+                            <LoginButton />
+                     )}
         </Navbar>
 
     );
