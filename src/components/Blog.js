@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { getCategories } from '../api/categories';
 import { postBlog } from '../api/todos';
+import swal from 'sweetalert';
 
 const Blog = () => {
 
@@ -10,7 +11,8 @@ const Blog = () => {
   const [categories, setCategories] = useState([]);
   const [userName, setUserName] = useState('1');
   const [imagen, setImagen] = useState('1.jpg');
-  const [category, setCategory] = useState('Nada seleccionado');
+  const [imagenURL, setImagenURL] = useState([]);
+  const [category, setCategory] = useState('');
   const [val, setVal] = useState();
   const [valDesc, setValDesc] = useState();
 
@@ -19,9 +21,20 @@ const Blog = () => {
       let obj = { title, description, category, userName, imagen }
       const added = await postBlog(obj);
       console.log(added);
+      if (!added) {
+        mostrarAlerta();
+        setVal('');
+        setValDesc('');
+        setImagen('');
+        setCategories([]);
+        fetchCategories();
+      }
     } catch (error) {
       console.log(error);
     }
+  }
+  const mostrarAlerta = () => {
+    swal("Blog creado", "Se ha creado el blog exitosamente");
   }
 
   async function fetchCategories() {
@@ -45,6 +58,12 @@ const Blog = () => {
     setValDesc(e.target.value);
   }
 
+  const onChangeImagen = (e) => {
+    setImagen(e.target.value);
+    setImagenURL(e.target.files[0]);
+    console.log(e.target.value)
+  }
+
   const cambioCategory = (e) => {
     setCategory(e.target.value);
   }
@@ -62,7 +81,7 @@ const Blog = () => {
           <Form>
             <Form.Group controlId="formName">
               <Form.Label>Title</Form.Label>
-              <Form.Control type="text" placeholder="Enter title" onChange={onChangeTitle} value={val || ''} />
+              <Form.Control type="text" placeholder="Enter title"  onChange={onChangeTitle} value={val || ''} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
               <Form.Label>Text</Form.Label>
@@ -83,7 +102,7 @@ const Blog = () => {
               </select>
               {/* <Form.Label>El elemento seleccionado es {category}</Form.Label> */}
             </Form.Group>
-            <Form.Group controlId="formFile" className="mb-3">
+            <Form.Group controlId="formFile" className="mb-3" onChange={onChangeImagen}>
               <Form.Label>Image</Form.Label>
               <Form.Control type="file" />
             </Form.Group>
